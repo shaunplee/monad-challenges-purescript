@@ -3,17 +3,26 @@ module MCPrelude
   , mkSeed
   , rand
   , toLetter
+  , module ExportArray
   , module ExportCodeUnits
   , module ExportFoldable
   , module ExportPrelude
+  , module ExportTraversable
+  , module ExportStringUtils
+  , module ExportTuple
   ) where
 
 import Prelude
+import Data.Array ((..), filter, range, concat, concatMap, take, drop, takeWhile, dropWhile, span, zip, zipWith) as ExportArray
 import Data.Char (fromCharCode, toCharCode)
-import Data.Foldable (foldl, foldr) as ExportFoldable
+import Data.Foldable (foldl, foldr, and, or, any, all, sum, product, elem, notElem) as ExportFoldable
 import Data.Maybe (Maybe(..))
 import Data.String.CodeUnits (fromCharArray) as ExportCodeUnits
-import Prelude (($), (*), (+), (-), (/), (<<<), (>>>), map) as ExportPrelude
+import Data.String.Utils (lines, words) as ExportStringUtils
+import Data.Traversable (scanl, scanr) as ExportTraversable
+import Data.Tuple (Tuple(..), fst, snd) as ExportTuple
+import Data.Tuple (Tuple(..))
+import Prelude ((||), (&&), disj, conj, not, otherwise, Ordering(LT, GT, EQ), class Eq, (==), (/=), eq, notEq, class Ord, compare, min, max, comparing, (<), (<=), (>), (>=), class Bounded, top, bottom, div, mod, lcm, gcd, identity, const, flip, map, ($), (<>), (*), (+), (-), (/), (<<<), (>>>), (#), (<$>)) as ExportPrelude
 
 newtype Seed
   = Seed Int
@@ -27,8 +36,8 @@ mkSeed n = Seed n
 m :: Int
 m = 0x7FFF
 
-rand :: Seed -> { newVal :: Int, newSeed :: Seed }
-rand (Seed s) = { newVal: s', newSeed: Seed s' }
+rand :: Seed -> Tuple Seed Int
+rand (Seed s) = Tuple (Seed s') s'
   where
   s' = (s * 16807) `mod` m
 

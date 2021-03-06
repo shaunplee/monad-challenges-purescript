@@ -8,6 +8,8 @@ You can edit this file as you like.
                  , "effect"
                  , "psci-support"
                  , "strings"
+                 , "stringutils"
+                 , "tuples"
                  , "foldable-traversable" ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
