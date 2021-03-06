@@ -1,3 +1,19 @@
+-----------------------------------------------------------------------------
+-- |
+-- Module      :  MCPrelude
+-- Copyright   :  (c) Shaun Lee 2021
+-- License     :  BSD-style (see the LICENSE file)
+--
+-- Maintainer  :  shaun@curlyfri.es
+-- Stability   :  stable
+-- Portability :  portable
+--
+-- This MCPrelude is a modified, PureScript version of the Haskell
+-- MCPrelude from the original Monad Challenges, which is a modified
+-- version of the Haskell Prelude designed specifically for The Monad
+-- Challenges.
+--
+-----------------------------------------------------------------------------
 module MCPrelude
   ( Seed
   , mkSeed

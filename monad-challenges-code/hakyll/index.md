@@ -71,7 +71,10 @@ for reference.
 
 ### Who did this?
 
-* Doug Beardsley (with feedback and suggestions from Brent Yorgey)
+* Doug Beardsley (mightybyte) (with feedback and suggestions from Brent Yorgey)
+  created the [original version](http://mightybyte.github.io/monad-challenges/)
+  in Haskell, which is licensed under
+  [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ### Who is porting this from Haskell to PureScript?
 
