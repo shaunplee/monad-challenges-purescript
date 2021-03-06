@@ -46,7 +46,7 @@
 
       </header>
       <section>
-        <h1>The Monad Challenges</h1>
+        <h1>The Monad Challenges - PureScript Edition</h1>
 
         <section id="work-in-progress" class="notice">
 <h3>Work In Progress</h3>
@@ -59,8 +59,8 @@
 <p><em>Please do NOT publish the answers to these challenges.</em> Reading answers that you did not create yourself defeats the whole purpose.</p>
 <h3 id="do-i-need-to-know-category-theory">Do I need to know category theory?</h3>
 <p>No.</p>
-<h3 id="do-i-need-to-know-haskell">Do I need to know Haskell?</h3>
-<p>Yes, we assume that you have some beginner “pre-monad” level knowledge of the following Haskell concepts:</p>
+<h3 id="do-i-need-to-know-purescript">Do I need to know PureScript?</h3>
+<p>Yes, we assume that you have some beginner “pre-monad” level knowledge of the following Haskell/PureScript concepts:</p>
 <ul>
 <li>Basic syntax</li>
 <li>Type signatures</li>
@@ -70,47 +70,48 @@
 <li>Polymorphism</li>
 <li>Type classes</li>
 </ul>
-<p>We are not trying to teach you Haskell here. We are trying to guide you down the path to a fully internalized working knowledge of monads. If you need to learn Haskell, go work through some beginning Haskell materials and come back when you think you need to learn monads.</p>
+<p>Chapters 1 through 7 of <a href="https://book.purescript.org">PureScript by Example</a> should cover everything you need to know for these exercises. (Let us know!)</p>
+<p>We are not trying to teach you PureScript here. We are trying to guide you down the path to a fully internalized working knowledge of monads. If you need to learn PureScript, go work through some beginning PureScript materials and come back when you think you need to learn monads.</p>
 <h3 id="organizing-your-code">Organizing Your Code</h3>
 <p>It will probably help if you organize your code into one file per set of challenges. Some of the problem sets build on previous ones, so it will be convenient to be able to easily import your code for a whole set or find it for reference.</p>
 <h3 id="who-did-this">Who did this?</h3>
 <ul>
-<li>Doug Beardsley (with feedback and suggestions from Brent Yorgey)</li>
+<li>Doug Beardsley (mightybyte) (with feedback and suggestions from Brent Yorgey) created the <a href="http://mightybyte.github.io/monad-challenges/">original version</a> in Haskell, which is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></li>
+</ul>
+<h3 id="who-is-porting-this-from-haskell-to-purescript">Who is porting this from Haskell to PureScript?</h3>
+<ul>
+<li>Shaun Lee</li>
 </ul>
 <h3 id="code-template">Code Template</h3>
-<p>For all of these problem sets you should use the following language pragmas and imports:</p>
-<pre><code>{-# LANGUAGE MonadComprehensions #-}
-{-# LANGUAGE RebindableSyntax  #-}
-
-module Set1 where
+<p>For all of these problem sets you should use the following import:</p>
+<pre><code>module Set1 where
 
 import MCPrelude</code></pre>
 <p>MCPrelude should be the only module you import. Do not import any other modules. We are giving you a special prelude because we want you to solve these challenges without the use of monad libraries that have already done the work for you. Also, don’t look at the code in Control.Monad, the transformers package, or the mtl package. You’re doing this to learn. To do that you need to struggle with the concepts. Don’t cheat yourself out of the benefit you can get by working through things yourself.</p>
 <p>Many of the problem sets build on things you did in previous sets, so you may want to put all your code for each set into a single module to make it easier to reuse your previous work. In later sets you will probably want to go back and look at your code for each set to find similarities.</p>
 <h3 id="getting-started">Getting Started</h3>
 <p>First clone the monad-challenges github repository and build the associated library.</p>
-<pre><code>git clone https://github.com/mightybyte/monad-challenges.git
-cd monad-challenges/monad-challenges-code
-cabal install</code></pre>
+<pre><code>git clone https://github.com/shaunplee/monad-challenges-purescript.git
+cd monad-challenges-purescript/monad-challenges-code-purescript
+spago build</code></pre>
 <p>This makes the MCPrelude module available on your system. Now head on over to <a href="pages/set1.html">Set 1</a> and start coding!</p>
-<p>Once you’ve written some code, the easiest way to test it is to use Haskell’s REPL, <code>ghci</code>.</p>
-<pre><code>ghci Set1.hs</code></pre>
-<p>You can inspect symbols you’ve written just by typing them in <code>ghci</code>.</p>
-<pre><code>$ ghci Set1.hs
-GHCi, version 7.10.2: http://www.haskell.org/ghc/  :? for help
-[1 of 1] Compiling Set1             ( Set1.hs, interpreted )
-Ok, modules loaded: Set1.
-*Set1&gt; fiveRands
+<p>Once you’ve written some code, the easiest way to test it is to use PureScript’s REPL, <code>PSCi</code>.</p>
+<pre><code>spago repl</code></pre>
+<p>You can inspect symbols you’ve written just by typing them in <code>PSCi</code>.</p>
+<pre><code>$ spago repl
+PSCi, version 0.13.8
+Type :? for help
+
+import Prelude
+
+&gt; import Set1
+&gt; fiveRands
 [33614,564950498,1097816499,1969887316,140734213]
-*Set1&gt;</code></pre>
+
+&gt;</code></pre>
 <p>You can also type <code>:r</code> to reload Set1.hs after you make code changes. (Note that the above numbers are not the correct answer for fiveRands.)</p>
 <h3 id="hex-decoding">Hex Decoding</h3>
-<p>Some challenges include hex encoded hints if you get stuck. You can put “hex decoder” into your favorite search engine to find numerous web pages that will do the decoding for you. Or you can use this bit of Haskell:</p>
-<pre><code>import Numeric (readHex)
-import Data.List.Split (chunksOf)
-
-hexDecode :: String -&gt; String
-hexDecode = map (toEnum . fst . head . readHex) . (chunksOf 2)</code></pre>
+<p>Some challenges include hex encoded hints if you get stuck. You can put “hex decoder” into your favorite search engine to find numerous web pages that will do the decoding for you.</p>
 
       </section>
     </div>
