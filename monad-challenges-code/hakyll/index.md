@@ -88,7 +88,7 @@ For all of these problem sets you should use the following import:
 
     import MCPrelude
 
-MCPrelude should be the only module you import.  Do not import any other
+[MCPrelude](./generated-docs/html/MCPrelude.html) should be the only module you import.  Do not import any other
 modules.  We are giving you a special prelude because we want you to solve
 these challenges without the use of monad libraries that have already done the
 work for you.  Also, don't look at the code in Control.Monad, the transformers
