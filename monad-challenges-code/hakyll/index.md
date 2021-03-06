@@ -1,5 +1,5 @@
 ---
-title: The Monad Challenges
+title: The Monad Challenges - PureScript Edition
 ---
 
 <div class="notice">
@@ -42,10 +42,10 @@ you did not create yourself defeats the whole purpose.
 
 No.
 
-### Do I need to know Haskell?
+### Do I need to know PureScript?
 
 Yes, we assume that you have some beginner "pre-monad" level knowledge of
-the following Haskell concepts:
+the following Haskell/PureScript concepts:
 
 * Basic syntax
 * Type signatures
@@ -55,9 +55,11 @@ the following Haskell concepts:
 * Polymorphism
 * Type classes
 
-We are not trying to teach you Haskell here. We are trying to guide you down the
+Chapters 1 through 7 of [PureScript by Example](https://book.purescript.org) should cover everything you need to know for these exercises. (Let us know!)
+
+We are not trying to teach you PureScript here. We are trying to guide you down the
 path to a fully internalized working knowledge of monads. If you need to learn
-Haskell, go work through some beginning Haskell materials and come back when you
+PureScript, go work through some beginning PureScript materials and come back when you
 think you need to learn monads.
 
 ### Organizing Your Code
@@ -71,13 +73,13 @@ for reference.
 
 * Doug Beardsley (with feedback and suggestions from Brent Yorgey)
 
+### Who is porting this from Haskell to PureScript?
+
+* Shaun Lee
+
 ### Code Template
 
-For all of these problem sets you should use the following language pragmas
-and imports:
-
-    {-# LANGUAGE MonadComprehensions #-}
-    {-# LANGUAGE RebindableSyntax  #-}
+For all of these problem sets you should use the following import:
 
     module Set1 where
 
@@ -101,27 +103,31 @@ and look at your code for each set to find similarities.
 First clone the monad-challenges github repository and build the associated
 library.
 
-    git clone https://github.com/mightybyte/monad-challenges.git
-    cd monad-challenges/monad-challenges-code
-    cabal install
+    git clone https://github.com/shaunplee/monad-challenges-purescript.git
+    cd monad-challenges-purescript/monad-challenges-code-purescript
+    spago build
 
 This makes the MCPrelude module available on your system. Now head on over to
 [Set 1](pages/set1.html) and start coding!
 
-Once you've written some code, the easiest way to test it is to use Haskell's
-REPL, `ghci`.
+Once you've written some code, the easiest way to test it is to use PureScript's
+REPL, `PSCi`.
 
-    ghci Set1.hs
+    spago repl
 
-You can inspect symbols you've written just by typing them in `ghci`.
+You can inspect symbols you've written just by typing them in `PSCi`.
 
-    $ ghci Set1.hs
-    GHCi, version 7.10.2: http://www.haskell.org/ghc/  :? for help
-    [1 of 1] Compiling Set1             ( Set1.hs, interpreted )
-    Ok, modules loaded: Set1.
-    *Set1> fiveRands
+    $ spago repl
+    PSCi, version 0.13.8
+    Type :? for help
+
+    import Prelude
+
+    > import Set1
+    > fiveRands
     [33614,564950498,1097816499,1969887316,140734213]
-    *Set1>
+
+    >
 
 You can also type `:r` to reload Set1.hs after you make code changes.
 (Note that the above numbers are not the correct answer for fiveRands.)
@@ -130,10 +136,4 @@ You can also type `:r` to reload Set1.hs after you make code changes.
 
 Some challenges include hex encoded hints if you get stuck.  You can put "hex
 decoder" into your favorite search engine to find numerous web pages that will
-do the decoding for you.  Or you can use this bit of Haskell:
-
-    import Numeric (readHex)
-    import Data.List.Split (chunksOf)
-
-    hexDecode :: String -> String
-    hexDecode = map (toEnum . fst . head . readHex) . (chunksOf 2)
+do the decoding for you.
