@@ -130,7 +130,7 @@ You can inspect symbols you've written just by typing them in `PSCi`.
 
     >
 
-You can also type `:r` to reload Set1.hs after you make code changes.
+You can also type `:r` to reload Set1.purs after you make code changes.
 (Note that the above numbers are not the correct answer for fiveRands.)
 
 ### Hex Decoding
