@@ -51,7 +51,7 @@
 
         <p>Use the provided <code>rand</code> function and your <code>randLetter</code> function to make a function that generates a random pair of a Char and an Int.</p>
 <pre><code>randPair :: Gen (Tuple Char Int)</code></pre>
-<p>Generate the letter first, then generate the number using the seed acquired from generating the letter. When you give this function <code>(mkSeed 1)</code> it gives you the random pair <code>('l',23709)</code>.</p>
+<p>Generate the letter first, then generate the number using the seed acquired from generating the letter. When you give this function <code>(mkSeed 1)</code> it gives you the random pair <code>Tuple 'l' 23709</code>.</p>
 <p>Here we’re starting to see the <code>Gen</code> type synonym pay off. Without <code>Gen</code>, the type would have been:</p>
 <pre><code>randPair :: Seed -&gt; (Tuple Seed (Tuple Char Int))</code></pre>
 <p>Still understandable, but the nested tuples are starting to obscure things slightly.</p>
