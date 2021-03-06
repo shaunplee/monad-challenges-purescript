@@ -124,8 +124,6 @@ You can inspect symbols you've written just by typing them in `PSCi`.
     PSCi, version 0.13.8
     Type :? for help
 
-    import Prelude
-
     > import Set1
     > fiveRands
     [33614,564950498,1097816499,1969887316,140734213]
