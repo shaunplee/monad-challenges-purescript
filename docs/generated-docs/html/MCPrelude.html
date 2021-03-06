@@ -1209,6 +1209,10 @@ into a single, new array.</p>
 </div></div><div class="decl" id="v:concat"><h3 class="decl__title clearfix"><a class="decl__anchor" href="#v:concat">#</a><span>concat</span> </h3><div class="decl__body"><pre class="decl__signature"><code><a href="MCPrelude.html#v:concat" title="MCPrelude.concat"><span class="ident">concat</span></a> <span class="syntax">::</span> <span class="keyword">forall</span> a<span class="syntax">.</span> <a href="Prim.html#t:Array" title="Prim.Array"><span class="ctor">Array</span></a> <span class="syntax">(</span><a href="Prim.html#t:Array" title="Prim.Array"><span class="ctor">Array</span></a> a<span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="Prim.html#t:Array" title="Prim.Array"><span class="ctor">Array</span></a> a</code></pre><p>Flatten an array of arrays, creating a new array.</p>
 <pre class="purescript"><code>concat [[1, 2, 3], [], [4, 5, 6]] = [1, 2, 3, 4, 5, 6]
 </code></pre>
+</div></div><div class="decl" id="v:(:)"><h3 class="decl__title clearfix"><a class="decl__anchor" href="#v:(:)">#</a><span>(:)</span> </h3><div class="decl__body"><p>Operator alias for Data.Array.cons <em>(right-associative / precedence 6)</em></p><p>An infix alias for <code>cons</code>.</p>
+<pre class="purescript"><code>1 : [2, 3, 4] = [1, 2, 3, 4]
+</code></pre>
+<p>Note, the running time of this function is <code>O(n)</code>.</p>
 </div></div><div class="decl" id="v:(..)"><h3 class="decl__title clearfix"><a class="decl__anchor" href="#v:(..)">#</a><span>(..)</span> </h3><div class="decl__body"><p>Operator alias for Data.Array.range <em>(non-associative / precedence 8)</em></p><p>An infix synonym for <code>range</code>.</p>
 <pre class="purescript"><code>2 .. 5 = [2, 3, 4, 5]
 </code></pre>
