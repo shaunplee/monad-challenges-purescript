@@ -29,7 +29,7 @@ module MCPrelude
   ) where
 
 import Prelude
-import Data.Array ((..), filter, range, concat, concatMap, take, drop, takeWhile, dropWhile, span, replicate, cons, snoc, zip, zipWith) as ExportArray
+import Data.Array ((..), filter, range, concat, concatMap, take, drop, takeWhile, dropWhile, span, replicate, cons, (:), snoc, zip, zipWith) as ExportArray
 import Data.Char (fromCharCode, toCharCode)
 import Data.Foldable (foldl, foldr, and, or, any, all, sum, product, elem, notElem) as ExportFoldable
 import Data.Maybe (Maybe(..))
