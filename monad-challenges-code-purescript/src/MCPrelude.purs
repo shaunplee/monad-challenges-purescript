@@ -1,19 +1,15 @@
------------------------------------------------------------------------------
--- |
--- Module      :  MCPrelude
--- Copyright   :  (c) Shaun Lee 2021
--- License     :  BSD-style (see the LICENSE file)
+--  Module      :  MCPrelude
+--  Copyright   :  (c) Shaun Lee 2021
+--  License     :  BSD-style (see the LICENSE file)
 --
--- Maintainer  :  shaun@curlyfri.es
--- Stability   :  stable
--- Portability :  portable
+--  Maintainer  :  shaun@curlyfri.es
+--  Stability   :  stable
+--  Portability :  portable
 --
--- This MCPrelude is a modified, PureScript version of the Haskell
--- MCPrelude from the original Monad Challenges, which is a modified
--- version of the Haskell Prelude designed specifically for The Monad
--- Challenges.
---
------------------------------------------------------------------------------
+-- | This MCPrelude is a modified, PureScript version of the Haskell
+-- | MCPrelude from the original Monad Challenges, which is a modified
+-- | version of the Haskell Prelude designed specifically for The Monad
+-- | Challenges.
 module MCPrelude
   ( Seed
   , mkSeed
@@ -40,6 +36,7 @@ import Data.Tuple (Tuple(..), fst, snd) as ExportTuple
 import Data.Tuple (Tuple(..))
 import Prelude ((||), (&&), disj, conj, not, otherwise, Ordering(LT, GT, EQ), class Eq, (==), (/=), eq, notEq, class Ord, compare, min, max, comparing, (<), (<=), (>), (>=), class Bounded, top, bottom, div, mod, lcm, gcd, identity, const, flip, map, ($), (<>), (*), (+), (-), (/), (<<<), (>>>), (#), (<$>)) as ExportPrelude
 
+-- | A Seed for the pseudo-random generator `rand`
 newtype Seed
   = Seed Int
 
