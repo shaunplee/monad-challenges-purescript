@@ -15,9 +15,13 @@ module MCPrelude
   , mkSeed
   , rand
   , toLetter
+  , GreekData
+  , greekDataA
+  , greekDataB
   , module ExportArray
   , module ExportCodeUnits
   , module ExportFoldable
+  , module ExportInt
   , module ExportPrelude
   , module ExportTraversable
   , module ExportStringUtils
@@ -28,6 +32,7 @@ import Prelude
 import Data.Array ((..), filter, range, concat, concatMap, take, drop, takeWhile, dropWhile, span, replicate, cons, (:), snoc, zip, zipWith) as ExportArray
 import Data.Char (fromCharCode, toCharCode)
 import Data.Foldable (foldl, foldr, and, or, any, all, sum, product, elem, notElem) as ExportFoldable
+import Data.Int (toNumber) as ExportInt
 import Data.Maybe (Maybe(..))
 import Data.String.CodeUnits (fromCharArray) as ExportCodeUnits
 import Data.String.Utils (lines, words) as ExportStringUtils
@@ -60,3 +65,22 @@ toLetter v = case go v of
   Just c -> c
   where
   go = fromCharCode <<< (_ + toCharCode 'a') <<< (_ `mod` 26)
+
+type GreekData
+  = Array (Tuple String (Array Int))
+
+greekDataA :: GreekData
+greekDataA =
+  [ Tuple "alpha" [ 5, 10 ]
+  , Tuple "beta" [ 0, 8 ]
+  , Tuple "gamma" [ 18, 47, 60 ]
+  , Tuple "delta" [ 42 ]
+  ]
+
+greekDataB :: GreekData
+greekDataB =
+  [ Tuple "phi" [ 53, 13 ]
+  , Tuple "chi" [ 21, 8, 191 ]
+  , Tuple "psi" []
+  , Tuple "omega" [ 6, 82, 144 ]
+  ]
