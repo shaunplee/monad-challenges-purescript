@@ -49,7 +49,7 @@
       <section>
         <h1>Random Number Generation</h1>
 
-        <p>In MCPrelude we provide a simple random number generation function <code>rand</code>. Random number generators usually rely on mutable state side effects. They maintain some state somewhere in memory and use that to figure out what “random” number to give you. Before the function returns, it modifies the mutable state so that the next time you call the function you’ll get a different number. Purescript is a pure functional programming language and because our custom Prelude hides Purescript’s mechanisms for dealing with side effects, we can’t build a random number generator that way. Our random number generator has to have everything it needs passed in and it has to return everything it modifies. Therefore, it has this type signature:</p>
+        <p>In MCPrelude we provide a simple random number generation function <code>rand</code>. Random number generators usually rely on mutable state side effects. They maintain some state somewhere in memory and use that to figure out what “random” number to give you. Before the function returns, it modifies the mutable state so that the next time you call the function you’ll get a different number. PureScript is a pure functional programming language and because our custom Prelude hides PureScript’s mechanisms for dealing with side effects, we can’t build a random number generator that way. Our random number generator has to have everything it needs passed in and it has to return everything it modifies. Therefore, it has this type signature:</p>
 <pre><code>rand :: Seed -&gt; Tuple Seed Int</code></pre>
 <p>You can construct seeds with the <code>mkSeed</code> function.</p>
 <pre><code>mkSeed :: Int -&gt; Seed</code></pre>
