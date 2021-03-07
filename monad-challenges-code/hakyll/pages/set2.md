@@ -4,7 +4,7 @@ title: "Set 2: Failing Computations"
 
 This set deals with programming patterns that arise when dealing with
 computations that might fail.  Failing computations come up all the time in
-the real world and Haskell can provide great tools for dealing with them.
+the real world and PureScript can provide great tools for dealing with them.
 
 1. [The Maybe type](ex2-1.html)
 2. [Build a library of things that can fail](ex2-2.html)
