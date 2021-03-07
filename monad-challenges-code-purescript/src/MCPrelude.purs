@@ -18,6 +18,7 @@ module MCPrelude
   , GreekData
   , greekDataA
   , greekDataB
+  , salaries
   , module ExportArray
   , module ExportCodeUnits
   , module ExportFoldable
@@ -83,4 +84,11 @@ greekDataB =
   , Tuple "chi" [ 21, 8, 191 ]
   , Tuple "psi" []
   , Tuple "omega" [ 6, 82, 144 ]
+  ]
+
+salaries :: Array (Tuple String Int)
+salaries =
+  [ Tuple "alice" 105000
+  , Tuple "bob" 90000
+  , Tuple "carol" 85000
   ]
