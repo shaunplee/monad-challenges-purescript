@@ -40,7 +40,7 @@ import Data.String.Utils (lines, words) as ExportStringUtils
 import Data.Traversable (scanl, scanr) as ExportTraversable
 import Data.Tuple (Tuple(..), fst, snd) as ExportTuple
 import Data.Tuple (Tuple(..))
-import Prelude ((||), (&&), disj, conj, not, otherwise, Ordering(LT, GT, EQ), class Eq, (==), (/=), eq, notEq, class Ord, compare, min, max, comparing, (<), (<=), (>), (>=), class Bounded, top, bottom, div, mod, lcm, gcd, identity, const, flip, map, ($), (<>), (*), (+), (-), (/), (<<<), (>>>), (#), (<$>), class Show, show) as ExportPrelude
+import Prelude ((||), (&&), disj, conj, not, otherwise, Ordering(LT, GT, EQ), class Eq, (==), (/=), eq, notEq, class Ord, compare, min, max, comparing, (<), (<=), (>), (>=), class Bounded, top, bottom, div, mod, lcm, gcd, identity, const, flip, map, ($), (<>), (*), (+), (-), (/), (<<<), (>>>), (#), (<$>), class Show, show, class EuclideanRing, div, class Semiring, zero, one, add, mul) as ExportPrelude
 
 -- | A Seed for the pseudo-random generator `rand`
 newtype Seed

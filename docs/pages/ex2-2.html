@@ -53,7 +53,7 @@
 <pre><code>headMay :: forall a. Array a -&gt; Maybe a
 tailMay :: forall a. Array a -&gt; Maybe (Array a)
 lookupMay :: forall a b. Eq a =&gt; a -&gt; Array (Tuple a b) -&gt; Maybe b
-divMay :: Number -&gt; Number -&gt; Maybe Number
+divMay :: forall a. Eq a =&gt; EuclideanRing a =&gt; a -&gt; a -&gt; Maybe a
 maximumMay :: forall a. Ord a =&gt; Array a -&gt; Maybe a
 minimumMay :: forall a. Ord a =&gt; Array a -&gt; Maybe a</code></pre>
 <p>The functions <code>headMay</code> and <code>tailMay</code> are “safe” versions of the well known <code>head</code> and <code>tail</code> functions. The former returns the first element of a list or <code>Nothing</code> if the list is empty. The latter returns a list containing all but the first element of a list, or <code>Nothing</code> if the list is empty. The <code>lookupMay</code> function is kind of like the <code>lookup</code> for a map. Find the first tuple in the list where the first element is the equal to the passed in value and return the second element. If there is no matching <code>a</code>, then return <code>Nothing</code>. The <code>divMay</code> function should return <code>Nothing</code> if you’re dividing by <code>0</code> and the result of the division otherwise. <code>maximumMay</code> and <code>minimumMay</code> calculate the maximum and minimum respectively of all the numbers in the list, but if the list is empty they return <code>Nothing</code>.</p>
