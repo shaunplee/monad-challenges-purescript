@@ -32,7 +32,6 @@ module MCPrelude
   , module ExportTraversable
   , module ExportStringUtils
   , module ExportTuple
-  , module ExportTupleNested
   ) where
 
 import Prelude
@@ -45,7 +44,6 @@ import Data.String.CodeUnits (fromCharArray) as ExportCodeUnits
 import Data.String.Utils (lines, words) as ExportStringUtils
 import Data.Traversable (scanl, scanr) as ExportTraversable
 import Data.Tuple (Tuple(..), fst, snd) as ExportTuple
-import Data.Tuple.Nested (Tuple3, tuple3) as ExportTupleNested
 import Data.Tuple (Tuple(..))
 import Prelude ((||), (&&), disj, conj, not, otherwise, Ordering(LT, GT, EQ), class Eq, (==), (/=), eq, notEq, class Ord, compare, min, max, comparing, (<), (<=), (>), (>=), class Bounded, top, bottom, class EuclideanRing, div, mod, lcm, gcd, identity, const, flip, map, ($), (<>), (*), (+), (-), (/), (<<<), (>>>), (#), (<$>), class Show, show, class Semiring, zero, one, add, mul) as ExportPrelude
 
