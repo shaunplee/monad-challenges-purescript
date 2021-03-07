@@ -3,7 +3,7 @@
 --  License     :  BSD-style (see the LICENSE file)
 --
 --  Maintainer  :  shaun@curlyfri.es
---  Stability   :  stable
+--  Stability   :  experimental
 --  Portability :  portable
 --
 -- | This MCPrelude is a modified, PureScript version of the Haskell
@@ -19,6 +19,10 @@ module MCPrelude
   , greekDataA
   , greekDataB
   , salaries
+  , firstNames
+  , lastNames
+  , cardRanks
+  , cardSuits
   , module ExportArray
   , module ExportCodeUnits
   , module ExportFoldable
@@ -40,7 +44,7 @@ import Data.String.Utils (lines, words) as ExportStringUtils
 import Data.Traversable (scanl, scanr) as ExportTraversable
 import Data.Tuple (Tuple(..), fst, snd) as ExportTuple
 import Data.Tuple (Tuple(..))
-import Prelude ((||), (&&), disj, conj, not, otherwise, Ordering(LT, GT, EQ), class Eq, (==), (/=), eq, notEq, class Ord, compare, min, max, comparing, (<), (<=), (>), (>=), class Bounded, top, bottom, div, mod, lcm, gcd, identity, const, flip, map, ($), (<>), (*), (+), (-), (/), (<<<), (>>>), (#), (<$>), class Show, show, class EuclideanRing, div, class Semiring, zero, one, add, mul) as ExportPrelude
+import Prelude ((||), (&&), disj, conj, not, otherwise, Ordering(LT, GT, EQ), class Eq, (==), (/=), eq, notEq, class Ord, compare, min, max, comparing, (<), (<=), (>), (>=), class Bounded, top, bottom, class EuclideanRing, div, mod, lcm, gcd, identity, const, flip, map, ($), (<>), (*), (+), (-), (/), (<<<), (>>>), (#), (<$>), class Show, show, class Semiring, zero, one, add, mul) as ExportPrelude
 
 -- | A Seed for the pseudo-random generator `rand`
 newtype Seed
@@ -92,3 +96,15 @@ salaries =
   , Tuple "bob" 90000
   , Tuple "carol" 85000
   ]
+
+firstNames :: Array String
+firstNames = [ "alice", "bob", "carol", "dave" ]
+
+lastNames :: Array String
+lastNames = [ "doe", "jones", "smith" ]
+
+cardRanks :: Array Int
+cardRanks = [ 2, 3, 4, 5 ]
+
+cardSuits :: Array String
+cardSuits = [ "H", "D", "C", "S" ]
