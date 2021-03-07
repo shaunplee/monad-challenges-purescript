@@ -62,7 +62,7 @@ salaries =
 <p>Now generalize this pattern in the same way we generalized <code>chain</code>/<code>link</code> in the previous exercise.</p>
 <p>Call this function <code>yLink</code>…because it is kind of like a y-shaped <code>chain</code>/<code>link</code>. Coming up with the right type signature is often the tricky part. Take a look at how we came up with the <code>chain</code> type signature in the last exercise and see if you can came up with <code>yLink</code>’s type signature. Make a serious effort here.</p>
 <p>If you were not able to come up with a good generalized type signature, here is the <a href="http://www.convertstring.com/EncodeDecode/HexDecode">hex</a> encoded version of what we are looking for.</p>
-<p>794C696E6B203A3A20666F72616C6C2061206220632E202861202D3E2062202D3E206329202D3E204D617962652061202D3E204D617962652062202D3E204D617962652063</p>
+<pre><code>794C696E6B203A3A20666F72616C6C2061206220632E202861202D3E2062202D3E206329202D3E204D617962652061202D3E204D617962652062202D3E204D617962652063</code></pre>
 <p>Once you have the type signature, implement <code>yLink</code> using <code>link</code>. <em>Do not use cases or pattern matching</em>. Once you have that working, implement <code>addSalaries</code> again as <code>addSalaries2</code> using <code>yLink</code> this time.</p>
 <p>Notice that in both <code>addSalaries</code> and <code>yLink</code> you have to construct a <code>Maybe</code> out of thin air kind of like we did in Set 1 with <code>mkGen</code>. Write a similar function for <code>Maybe</code>s with this type signature.</p>
 <pre><code>mkMaybe :: forall a. a -&gt; Maybe a</code></pre>
