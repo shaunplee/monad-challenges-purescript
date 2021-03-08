@@ -3,7 +3,7 @@ title: "Set 5: Do Notation"
 ---
 
 In this set, we are going to rewrite the challenges we completed in earlier sets using
-do syntax. Do syntax is a common form of syntactic sugar that you will see when writing Haskell,
+do syntax. Do syntax is a common form of syntactic sugar that you will see when writing PureScript,
 but it is functionally equivalent to previous functions we've already created.
 
 1. [Do notation](ex5-1.html)

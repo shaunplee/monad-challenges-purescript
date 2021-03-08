@@ -53,7 +53,7 @@
 <pre><code>rule1 = do
     foo &lt;- calcFoo
     bar foo</code></pre>
-<p>GHC automatically desugars this to</p>
+<p>The PureScript compiler (<code>purs</code>) automatically desugars this to</p>
 <pre><code>rule1 = bind calcFoo (\foo -&gt; bar foo)</code></pre>
 <p>It’s important to note what this says about the type signatures of everything involved.</p>
 <pre><code>rule1 :: m b
