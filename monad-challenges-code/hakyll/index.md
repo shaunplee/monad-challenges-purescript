@@ -55,7 +55,8 @@ the following Haskell/PureScript concepts:
 * Polymorphism
 * Type classes
 
-Chapters 1 through 7 of [PureScript by Example](https://book.purescript.org) should cover everything you need to know for these exercises. (Let us know!)
+Chapters 1 through 7 of [PureScript by Example](https://book.purescript.org) should
+cover everything you need to know for these exercises. (Let us know if it doesn't!)
 
 We are not trying to teach you PureScript here. We are trying to guide you down the
 path to a fully internalized working knowledge of monads. If you need to learn
