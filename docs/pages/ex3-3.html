@@ -50,7 +50,7 @@
         <h1>Generalizing pairs and cards</h1>
 
         <p>As we have done before, look at your <code>allPairs</code> and <code>allCards</code> functions and find the differences. Then implement a more general function that can be used to implement both <code>allPairs</code> and <code>allCards</code>. Call this new function <code>allCombs</code>.</p>
-<pre><code>allCombs :: allCombs :: forall a b c. (a -&gt; b -&gt; c) -&gt; Array a -&gt; Array b -&gt; Array c</code></pre>
+<pre><code>allCombs :: forall a b c. (a -&gt; b -&gt; c) -&gt; Array a -&gt; Array b -&gt; Array c</code></pre>
 <p>Then go back and reimplement <code>allPairs</code> and <code>allCards</code> in terms of <code>allCombs</code>. Verify that they do the same thing as the original functions.</p>
 <p><a href="ex3-2.html">Previous Page</a> - <a href="ex3-4.html">Next Page</a></p>
 
