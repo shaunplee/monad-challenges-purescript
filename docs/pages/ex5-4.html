@@ -49,13 +49,13 @@
       <section>
         <h1>Do Notation –  Set 2</h1>
 
-        <p>As with the previous set, you will want to create a <code>Monad</code> instance for your <code>Maybe data</code> type.</p>
+        <p>As with the previous set, you will want to create a <code>Monad</code> instance for your <code>Maybe</code> data type.</p>
 <p>Once that is accomplished, rewrite the following functions using do syntax:</p>
 <pre><code>queryGreek :: GreekData -&gt; String -&gt; Maybe Double
-addSalaries :: [(String, Integer)] -&gt; String -&gt; String -&gt; Maybe Integer
-tailProd :: Num a =&gt; [a] -&gt; Maybe a
-tailSum :: Num a =&gt; [a] -&gt; Maybe a
-tailMax :: Ord a =&gt; [a] -&gt; Maybe a</code></pre>
+addSalaries :: Array (Tuple String Int) -&gt; String -&gt; String -&gt; Maybe Int
+tailProd :: forall a. Semiring a =&gt; Array a -&gt; Maybe a
+tailSum :: forall a. Semiring a =&gt; Array a -&gt; Maybe a
+tailMax :: forall a. Ord a =&gt; Array a -&gt; Maybe a</code></pre>
 <p>You should import Set2 so that you can use the helper functions you wrote in that set.</p>
 <p>You can test <code>queryGreek</code> with the following assertions:</p>
 <pre><code>queryGreek greekDataA &quot;alpha&quot; == Just 2.0
