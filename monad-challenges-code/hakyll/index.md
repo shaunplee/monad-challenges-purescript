@@ -121,9 +121,10 @@ REPL, `PSCi`.
 You can inspect symbols you've written just by typing them in `PSCi`.
 
     $ spago repl
-    PSCi, version 0.13.8
+    PSCi, version 0.14.0
     Type :? for help
 
+    import MCPrelude
     > import Set1
     > fiveRands
     [33614,564950498,1097816499,1969887316,140734213]
