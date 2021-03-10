@@ -1,8 +1,9 @@
 Copyright (c) 2016, Doug Beardsley
+Portions copyright (c) 2021, Shaun Lee
 
 All rights reserved.
 
-Haskell code in this project uses the following license:
+Haskell code and PureScript code in this project use the following license:
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
