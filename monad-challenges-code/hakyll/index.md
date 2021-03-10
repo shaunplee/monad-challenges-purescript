@@ -122,7 +122,7 @@ REPL, `PSCi`.
 You can inspect symbols you've written just by typing them in `PSCi`.
 
     $ spago repl
-    PSCi, version 0.14.0
+    PSCi, version 0.13.8
     Type :? for help
 
     import MCPrelude
